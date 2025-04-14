@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: 'Manhattan',
             leader: {
                 name: 'Coelho',
-                image: './images/profile.svg',
+                image: './images/Manhattan.svg',
                 description: 'Breve descrição sobre o líder de Manhattan'
             }
         },
