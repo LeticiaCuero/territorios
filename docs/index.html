@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa das Facções</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+    <div class="interface">
+        <div class="header">
+            <div class="header-logo">
+                <div class="svg-container">
+                    <svg id="logo-svg" viewBox="0 0 500 80">
+                        <defs>
+                            <linearGradient id="gradiente" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color: rgba(204, 2, 255, 1);" />
+                                <stop offset="100%" style="stop-color: rgba(255, 0, 153, 1);" />
+                            </linearGradient>
+                            <clipPath id="text-clip">
+                                <text x="20" y="55" font-family="Orbitron" font-size="32">Território das Facções</text>
+                            </clipPath>
+                        </defs>
+                        <text id="main-text" x="20" y="55" font-family="Orbitron" font-size="32" fill="url(#gradiente)">Território das Facções</text>
+                        <g clip-path="url(#text-clip)">
+                            <rect id="animated-rect" x="-100" y="15" width="5" height="40" fill="white"></rect>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div class="logo-section">
+                <img src="images/logoConnectHype.png" alt="Connect Hype" class="logo">
+                <img src="images/hypepng.png" alt="Hype" class="logo">
+            </div>
+        </div>
+        
+        <div id="map-container">
+            <div id="svg-container"></div>
+            <div id="fog-overlay"></div>
+        </div>
+
+        <div class="leader-panel">
+            <div class="leader-info hidden">
+                <div class="leader-image-container">
+                    <img id="leader-image" src="" alt="Líder">
+                </div>
+                <h2 id="leader-name"></h2>
+                <p id="leader-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © Copyright Hype Roleplay, 2019-2025, All rights reserved.
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

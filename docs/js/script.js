@@ -1,0 +1,167 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const svgContainer = document.getElementById('svg-container');
+    
+    const regions = {
+        'Bayone': { 
+            color: '#474747', 
+            name: 'Bayone',
+            leader: {
+                name: 'Nome do Líder',
+                image: './images/profile.svg',
+                description: 'Breve descrição sobre o líder de Bayone'
+            }
+        },
+        'New Jersey': { 
+            color: '#474747', 
+            name: 'Nova Jersey',
+            leader: {
+                name: 'Ghost',
+                image: './images/profile.svg',
+                description: 'Breve descrição sobre o líder de Nova Jersey'
+            }
+        },
+        'Manhattan': { 
+            color: '#474747', 
+            name: 'Manhattan',
+            leader: {
+                name: 'Coelho',
+                image: './images/profile.svg',
+                description: 'Breve descrição sobre o líder de Manhattan'
+            }
+        },
+        'New York': { 
+            color: '#474747', 
+            name: 'Nova York',
+            leader: {
+                name: 'Smith',
+                image: './images/profile.svg',
+                description: 'Breve descrição sobre o líder de Nova York'
+            }
+        },
+        'Queens': { 
+            color: '#474747', 
+            name: 'Queens',
+            leader: {
+                name: 'Vivi',
+                image: './images/profile.svg',
+                description: 'Breve descrição sobre o líder de Queens'
+            }
+        },
+        'Bronx': { 
+            color: '#474747', 
+            name: 'Bronx',
+            leader: {
+                name: 'Nome do Líder',
+                image: './images/profile.svg',
+                description: 'Breve descrição sobre o líder do Bronx'
+            }
+        },
+        'Brooklyn': { 
+            color: '#474747', 
+            name: 'Brooklyn',
+            leader: {
+                name: 'Juca',
+                image: './images/Brooklyn.png',
+                description: 'Breve descrição sobre o líder de Brooklyn'
+            }
+        }
+    };
+
+    fetch('Map.svg')  // Caminho relativo ao index.html
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(svgText => {
+            svgContainer.innerHTML = svgText;
+            
+            const fogOverlay = document.createElement('div');
+            fogOverlay.id = 'fog-overlay';
+            svgContainer.appendChild(fogOverlay);
+            
+            const svg = svgContainer.querySelector('svg');
+            svg.style.background = '#101010';
+            
+            const emblemas = ['Ouro', 'Esmeralda', 'Diamante', 'Hell', 'Prata', 'Bronze', 'Ametista'];
+            const mapGroup = svg.querySelector('#Map\\+lvl');
+            
+            emblemas.forEach(id => {
+                const emblema = svg.querySelector(`#${id}`);
+                if (emblema && mapGroup) {
+                    emblema.remove();
+                    mapGroup.appendChild(emblema);
+                }
+            });
+
+            let currentRegion = null;
+
+            Object.keys(regions).forEach(regionId => {
+                const element = document.getElementById(regionId);
+                if (element) {
+                    element.style.fill = regions[regionId].color;
+                    element.style.stroke = '#333333';
+                    element.style.strokeWidth = '1';
+                    element.classList.add('region');
+
+                    element.addEventListener('mouseenter', (e) => {
+                        element.style.stroke = '#000000';
+                        element.style.strokeWidth = '2';
+                        
+                        if (currentRegion !== regionId) {
+                            const leaderInfo = regions[regionId].leader;
+                            const leaderPanel = document.querySelector('.leader-panel');
+                            const leaderInfoEl = document.querySelector('.leader-info');
+                            
+                            leaderInfoEl.style.display = 'none';
+                            leaderInfoEl.classList.add('hidden');
+                            
+                            requestAnimationFrame(() => {
+                                const emblemMap = {
+                                    'New York': 'Hell',
+                                    'Bronx': 'Esmeralda',
+                                    'Manhattan': 'Diamante',
+                                    'Brooklyn': 'Prata',
+                                    'Queens': 'Bronze',
+                                    'Bayone': 'Ametista',
+                                    'New Jersey': 'Ouro'
+                                };
+                                
+                                const emblemaId = emblemMap[regionId];
+                                const emblema = document.getElementById(emblemaId);
+                                
+                                if (leaderPanel && leaderInfoEl && emblema) {
+                                    const emblemRect = emblema.getBoundingClientRect();
+                                    leaderPanel.style.left = `${emblemRect.left + (emblemRect.width/2)}px`;
+                                    leaderPanel.style.top = `${emblemRect.top + (emblemRect.height/2)}px`;
+                                    
+                                    document.getElementById('leader-image').src = leaderInfo.image;
+                                    document.getElementById('leader-name').textContent = leaderInfo.name;
+                                    document.getElementById('leader-description').textContent = leaderInfo.description;
+                                    
+                                    leaderInfoEl.style.display = 'flex';
+                                    requestAnimationFrame(() => {
+                                        leaderInfoEl.classList.remove('hidden');
+                                    });
+                                }
+                            });
+                            
+                            currentRegion = regionId;
+                        }
+                    });
+
+                    element.addEventListener('mouseleave', () => {
+                        element.style.stroke = '#333333';
+                        element.style.strokeWidth = '1';
+                        
+                        currentRegion = null;
+                        document.querySelector('.leader-info').classList.add('hidden');
+                    });
+                }
+            });
+        })
+        .catch(error => {
+            svgContainer.innerHTML = 'Erro ao carregar o mapa';
+        });
+});
