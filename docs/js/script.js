@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leader: {
                 name: 'Saminho (O desgraçado)',
                 image: './images/Bronx.png',
-                description: 'Cartel responsável pela maior produção' + '\n de equipamentos para roubos do Bronx'
+                description: 'Cartel responsável pela maior produção \n de equipamentos para roubos do Bronx'
             }
         },
         'Brooklyn': { 
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     
                                     document.getElementById('leader-image').src = leaderInfo.image;
                                     document.getElementById('leader-name').textContent = leaderInfo.name;
-                                    document.getElementById('leader-description').textContent = leaderInfo.description;
+                                    document.getElementById('leader-description').innerHTML = leaderInfo.description.replace(/\n/g, '<br>');
                                     
                                     leaderInfoEl.style.display = 'flex';
                                     requestAnimationFrame(() => {
