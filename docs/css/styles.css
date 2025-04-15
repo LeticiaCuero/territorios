@@ -134,20 +134,21 @@ body, html {
 
 #map-container {
     width: 100%;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 160px); /* Ajustado para considerar header e footer */
     position: relative;
     margin-top: 60px;
     box-sizing: border-box;
-    overflow: visible;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #svg-container {
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
+    max-width: 1200px; /* Limite máximo de largura */
+    max-height: 800px; /* Limite máximo de altura */
     position: relative;
     z-index: 5;
 }
@@ -155,9 +156,7 @@ body, html {
 #svg-container svg {
     width: 100%;
     height: 100%;
-    display: block;
-    overflow: visible;
-    position: relative;
+    object-fit: contain;
 }
 
 .region {
@@ -463,6 +462,21 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+    #map-container {
+        height: calc(100vh - 200px); /* Ajustado para telas menores */
+    }
+
+    #svg-container {
+        max-width: 90vw;
+        max-height: 90vh;
+    }
+
+    .header {
+        height: auto;
+        min-height: 60px;
+        padding: 10px;
+    }
+
     .header {
         flex-direction: column;
         gap: 20px;
@@ -493,6 +507,11 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
+    #map-container {
+        height: calc(100vh - 240px);
+        margin-top: 80px;
+    }
+
     #main-text {
         font-size: 24px;
     }
