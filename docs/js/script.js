@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
             color: '#474747', 
             name: 'Bronx',
             leader: {
-                name: 'Nome do Líder',
+                name: 'Saminho(O desgraçado)',
                 image: './images/Bronx.png',
                 description: 'Breve descrição sobre o líder do Bronx'
             }
