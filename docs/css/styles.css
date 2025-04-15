@@ -445,3 +445,81 @@ footer {
     white-space: nowrap;
     margin: 0;
 }
+
+/* Responsividade base */
+@media screen and (max-width: 1024px) {
+    .interface {
+        padding: 10px;
+    }
+
+    #map-container {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .leader-panel {
+        transform: scale(0.9);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .header-logo {
+        width: 100%;
+    }
+
+    .logo-section {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .logo {
+        max-width: 150px;
+    }
+
+    #svg-container svg {
+        width: 100%;
+        height: auto;
+    }
+
+    .leader-info {
+        transform: scale(0.8);
+        max-width: 90vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #main-text {
+        font-size: 24px;
+    }
+
+    .leader-info {
+        transform: scale(0.7);
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+
+/* Ajuste para garantir que o texto não transborde */
+.leader-info p {
+    word-break: break-word;
+    max-width: 100%;
+}
+
+/* Ajuste para o mapa sempre caber na tela */
+#map-container {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+#svg-container {
+    width: 100%;
+    height: auto;
+}
