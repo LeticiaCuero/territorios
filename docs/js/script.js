@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leader: {
                 name: 'Desconhecido',
                 image: './images/profile.svg',
-                description: 'A líder de Queens'
+                description: 'A líder do Queens'
             }
         },
         'Bronx': { 
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leader: {
                 name: 'Desconhecido',
                 image: './images/Brooklyn.png',
-                description: 'O líder de Brooklyn'
+                description: 'O líder do Brooklyn'
             }
         }
     };
