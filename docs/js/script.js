@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leader: {
                 name: 'Desconhecido',
                 image: './images/profile.svg',
-                description: 'Breve descrição sobre o líder de Bayone'
+                description: 'O líder de Bayone'
             }
         },
         'New Jersey': { 
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leader: {
                 name: 'Desconhecido',
                 image: './images/profile.svg',
-                description: 'Breve descrição sobre o líder de Nova Jersey'
+                description: 'O líder de Nova Jersey'
             }
         },
         'Manhattan': { 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leader: {
                 name: 'Desconhecido',
                 image: './images/Manhattan.png',
-                description: 'Breve descrição sobre o líder de Manhattan'
+                description: 'A líder de Manhattan'
             }
         },
         'New York': { 
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leader: {
                 name: 'Desconhecido',
                 image: './images/NewYork.png',
-                description: 'Breve descrição sobre o líder de Nova York'
+                description: 'O líder de Nova York'
             }
         },
         'Queens': { 
@@ -44,16 +44,16 @@ document.addEventListener('DOMContentLoaded', function() {
             leader: {
                 name: 'Desconhecido',
                 image: './images/profile.svg',
-                description: 'Breve descrição sobre o líder de Queens'
+                description: 'A líder de Queens'
             }
         },
         'Bronx': { 
             color: '#474747', 
             name: 'Bronx',
             leader: {
-                name: 'Saminho(O desgraçado)',
+                name: 'Saminho (O desgraçado)',
                 image: './images/Bronx.png',
-                description: 'Cartel responsável pela maior produção  de equipamenmtos para roubos do Bronx'
+                description: 'Cartel responsável pela maior produção de equipamentos para roubos do Bronx'
             }
         },
         'Brooklyn': { 
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leader: {
                 name: 'Desconhecido',
                 image: './images/Brooklyn.png',
-                description: 'Breve descrição sobre o líder de Brooklyn'
+                description: 'O líder de Brooklyn'
             }
         }
     };
