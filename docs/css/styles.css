@@ -406,6 +406,8 @@ footer {
     color: #000000;
     margin: 0;
     line-height: 1.4;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .leader-panel {
@@ -442,11 +444,4 @@ footer {
     color: white;
     white-space: nowrap;
     margin: 0;
-}
-
-#leader-description {
-    font-size: 10px;
-    color: #666;
-    text-align: center;
-    white-space: nowrap;
 }
