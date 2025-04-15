@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leader: {
                 name: 'Saminho(O desgraçado)',
                 image: './images/Bronx.png',
-                description: 'Breve descrição sobre o líder do Bronx'
+                description: 'Cartel responsável pela maior produção  de equipamenmtos para roubos do Bronx'
             }
         },
         'Brooklyn': { 
