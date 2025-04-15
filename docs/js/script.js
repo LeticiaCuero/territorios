@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
             color: '#474747', 
             name: 'Bayone',
             leader: {
-                name: 'Nome do Líder',
+                name: 'Desconhecido',
                 image: './images/profile.svg',
                 description: 'Breve descrição sobre o líder de Bayone'
             }
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             color: '#474747', 
             name: 'Nova Jersey',
             leader: {
-                name: 'Ghost',
+                name: 'Desconhecido',
                 image: './images/profile.svg',
                 description: 'Breve descrição sobre o líder de Nova Jersey'
             }
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             color: '#474747', 
             name: 'Manhattan',
             leader: {
-                name: 'Coelho',
+                name: 'Desconhecido',
                 image: './images/Manhattan.png',
                 description: 'Breve descrição sobre o líder de Manhattan'
             }
@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
             color: '#474747', 
             name: 'Nova York',
             leader: {
-                name: 'Smith',
-                image: './images/profile.svg',
+                name: 'Desconhecido',
+                image: './images/NewYork.png',
                 description: 'Breve descrição sobre o líder de Nova York'
             }
         },
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             color: '#474747', 
             name: 'Queens',
             leader: {
-                name: 'Vivi',
+                name: 'Desconhecido',
                 image: './images/profile.svg',
                 description: 'Breve descrição sobre o líder de Queens'
             }
@@ -60,14 +60,14 @@ document.addEventListener('DOMContentLoaded', function() {
             color: '#474747', 
             name: 'Brooklyn',
             leader: {
-                name: 'Juca',
+                name: 'Desconhecido',
                 image: './images/Brooklyn.png',
                 description: 'Breve descrição sobre o líder de Brooklyn'
             }
         }
     };
 
-    fetch('Map.svg')  // Caminho relativo ao index.html
+    fetch('Map.svg')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
