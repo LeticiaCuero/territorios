@@ -174,7 +174,7 @@ body, html {
     z-index: 9999;
 }
 
-#Ouro, #Esmeralda, #Diamante, #Hell, #Prata, #Bronze, #Ametista {
+#Ouro, #Esmeralda, #Diamante, #Hell, #Prata, #Bronze {
     transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 46;
     position: relative;
@@ -182,7 +182,7 @@ body, html {
 }
 
 #Ouro:hover, #Esmeralda:hover, #Diamante:hover, 
-#Hell:hover, #Prata:hover, #Bronze:hover, #Ametista:hover {
+#Hell:hover, #Prata:hover, #Bronze:hover {
     z-index: 9999;
 }
 
@@ -204,10 +204,6 @@ body, html {
 
 #Queens:hover ~ #Bronze {
     transform: translateY(-115px);
-}
-
-#Bayone:hover ~ #Ametista {
-    transform: translateY(-50px);
 }
 
 [id="New Jersey"]:hover ~ #Ouro {

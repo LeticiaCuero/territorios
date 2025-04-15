@@ -2,15 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const svgContainer = document.getElementById('svg-container');
     
     const regions = {
-        'Bayone': { 
-            color: '#474747', 
-            name: 'Bayone',
-            leader: {
-                name: 'Desconhecido',
-                image: './images/profile.svg',
-                description: 'O líder de Bayone'
-            }
-        },
         'New Jersey': { 
             color: '#474747', 
             name: 'Nova Jersey',
@@ -53,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leader: {
                 name: 'Saminho (O desgraçado)',
                 image: './images/Bronx.png',
-                description: 'Cartel responsável pela maior produção de equipamentos para roubos do Bronx'
+                description: 'Cartel responsável pela maior produção \n de equipamentos para roubos do Bronx'
             }
         },
         'Brooklyn': { 
@@ -124,7 +115,6 @@ document.addEventListener('DOMContentLoaded', function() {
                                     'Manhattan': 'Diamante',
                                     'Brooklyn': 'Prata',
                                     'Queens': 'Bronze',
-                                    'Bayone': 'Ametista',
                                     'New Jersey': 'Ouro'
                                 };
                                 
