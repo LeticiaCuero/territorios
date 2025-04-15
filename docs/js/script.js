@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: 'Bronx',
             leader: {
                 name: 'Nome do Líder',
-                image: './images/profile.svg',
+                image: './images/Bronx.png',
                 description: 'Breve descrição sobre o líder do Bronx'
             }
         },
