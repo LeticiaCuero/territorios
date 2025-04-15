@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const svg = svgContainer.querySelector('svg');
             svg.style.background = '#101010';
             
-            const emblemas = ['Ouro', 'Esmeralda', 'Diamante', 'Hell', 'Prata', 'Bronze', 'Ametista'];
+            const emblemas = ['Ouro', 'Esmeralda', 'Diamante', 'Hell', 'Prata', 'Bronze'];
             const mapGroup = svg.querySelector('#Map\\+lvl');
             
             emblemas.forEach(id => {
