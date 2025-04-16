@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: 'Nova Jersey',
             leader: {
                 name: 'Desconhecido',
-                image: './images/profile.svg',
+                image: './images/NewJersey.png',
                 description: 'O líder de Nova Jersey'
             }
         },
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: 'Queens',
             leader: {
                 name: 'Desconhecido',
-                image: './images/profile.svg',
+                image: './images/Queens.png',
                 description: 'A líder do Queens'
             }
         },
