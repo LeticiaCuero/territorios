@@ -134,15 +134,11 @@ body, html {
 
 #map-container {
     width: 100%;
-    height: calc(100vh - 100px); /* 60px header + 40px footer */
+    height: calc(100vh - 100px);
     position: relative;
     margin-top: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: visible;
 }
 
 #svg-container {
@@ -151,12 +147,17 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
+    position: relative;
+    z-index: 5;
 }
 
 #svg-container svg {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    display: block;
+    overflow: visible;
+    position: relative;
 }
 
 .region {
@@ -173,7 +174,7 @@ body, html {
     z-index: 9999;
 }
 
-#Ouro, #Esmeralda, #Diamante, #Hell, #Prata, #Bronze {
+#Ouro, #Esmeralda, #Diamante, #Hell, #Prata, #Bronze, #Ametista {
     transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 46;
     position: relative;
@@ -181,7 +182,7 @@ body, html {
 }
 
 #Ouro:hover, #Esmeralda:hover, #Diamante:hover, 
-#Hell:hover, #Prata:hover, #Bronze:hover {
+#Hell:hover, #Prata:hover, #Bronze:hover, #Ametista:hover {
     z-index: 9999;
 }
 
@@ -203,6 +204,10 @@ body, html {
 
 #Queens:hover ~ #Bronze {
     transform: translateY(-115px);
+}
+
+#Bayone:hover ~ #Ametista {
+    transform: translateY(-50px);
 }
 
 [id="New Jersey"]:hover ~ #Ouro {
@@ -401,12 +406,10 @@ footer {
 }
 
 #leader-description {
-    font-size: 12px;
-    color: #000000;
+    font-size: 14px;
+    color: #ccc;
     margin: 0;
     line-height: 1.4;
-    text-align: center;
-    white-space: nowrap;
 }
 
 .leader-panel {
@@ -445,107 +448,9 @@ footer {
     margin: 0;
 }
 
-/* Responsividade base */
-@media screen and (max-width: 1024px) {
-    .interface {
-        padding: 10px;
-    }
-
-    #map-container {
-        width: 95%;
-        margin: 0 auto;
-    }
-
-    .leader-panel {
-        transform: scale(0.9);
-    }
-}
-
-@media screen and (max-width: 768px) {
-    #map-container {
-        height: calc(100vh - 100px);
-        padding: 0;
-        margin-top: 60px;
-    }
-
-    #svg-container svg {
-        width: 100%;
-        height: 100%;
-        transform: none;
-    }
-
-    .header {
-        height: auto;
-        min-height: 60px;
-        padding: 10px;
-    }
-
-    .header {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .header-logo {
-        width: 100%;
-    }
-
-    .logo-section {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .logo {
-        max-width: 150px;
-    }
-
-    #svg-container svg {
-        width: 100%;
-        height: auto;
-    }
-
-    .leader-info {
-        transform: scale(0.8);
-        max-width: 90vw;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    #map-container {
-        height: calc(100vh - 140px);
-        margin-top: 100px;
-    }
-
-    #svg-container svg {
-        transform: scale(0.8);
-    }
-
-    #main-text {
-        font-size: 24px;
-    }
-
-    .leader-info {
-        transform: scale(0.7);
-    }
-
-    footer {
-        font-size: 12px;
-        padding: 10px;
-    }
-}
-
-/* Ajuste para garantir que o texto não transborde */
-.leader-info p {
-    word-break: break-word;
-    max-width: 100%;
-}
-
-/* Ajuste para o mapa sempre caber na tela */
-#map-container {
-    max-width: 100%;
-    overflow: hidden;
-}
-
-#svg-container {
-    width: 100%;
-    height: auto;
+#leader-description {
+    font-size: 10px;
+    color: #666;
+    text-align: center;
+    white-space: nowrap;
 }
