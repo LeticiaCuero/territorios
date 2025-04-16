@@ -134,14 +134,15 @@ body, html {
 
 #map-container {
     width: 100%;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 100px); /* 60px header + 40px footer */
     position: relative;
     margin-top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;
+    padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 #svg-container {
@@ -153,11 +154,9 @@ body, html {
 }
 
 #svg-container svg {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    transform-origin: center;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .region {
@@ -464,15 +463,15 @@ footer {
 
 @media screen and (max-width: 768px) {
     #map-container {
-        height: calc(100vh - 120px);
-        padding: 10px;
-        margin-top: 80px;
+        height: calc(100vh - 100px);
+        padding: 0;
+        margin-top: 60px;
     }
 
     #svg-container svg {
         width: 100%;
-        height: auto;
-        transform: scale(0.9);
+        height: 100%;
+        transform: none;
     }
 
     .header {
