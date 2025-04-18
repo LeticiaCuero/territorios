@@ -2,72 +2,63 @@ document.addEventListener('DOMContentLoaded', function() {
     const svgContainer = document.getElementById('svg-container');
     
     const regions = {
-        'Bayone': { 
-            color: '#474747', 
-            name: 'Bayone',
-            leader: {
-                name: 'Nome do Líder',
-                image: './images/profile.svg',
-                description: 'Breve descrição sobre o líder de Bayone'
-            }
-        },
         'New Jersey': { 
             color: '#474747', 
             name: 'Nova Jersey',
             leader: {
-                name: 'Ghost',
-                image: './images/profile.svg',
-                description: 'Breve descrição sobre o líder de Nova Jersey'
+                name: 'Desconhecido',
+                image: './images/NewJersey.png',
+                description: 'O líder de Nova Jersey'
             }
         },
         'Manhattan': { 
             color: '#474747', 
             name: 'Manhattan',
             leader: {
-                name: 'Coelho',
+                name: 'Desconhecido',
                 image: './images/Manhattan.png',
-                description: 'Breve descrição sobre o líder de Manhattan'
+                description: 'A líder de Manhattan'
             }
         },
         'New York': { 
             color: '#474747', 
             name: 'Nova York',
             leader: {
-                name: 'Smith',
-                image: './images/profile.svg',
-                description: 'Breve descrição sobre o líder de Nova York'
+                name: 'Desconhecido',
+                image: './images/NewYork.png',
+                description: 'O líder de Nova York'
             }
         },
         'Queens': { 
             color: '#474747', 
             name: 'Queens',
             leader: {
-                name: 'Vivi',
-                image: './images/profile.svg',
-                description: 'Breve descrição sobre o líder de Queens'
+                name: 'Desconhecido',
+                image: './images/Queens.png',
+                description: 'A líder do Queens'
             }
         },
         'Bronx': { 
             color: '#474747', 
             name: 'Bronx',
             leader: {
-                name: 'Nome do Líder',
-                image: './images/profile.svg',
-                description: 'Breve descrição sobre o líder do Bronx'
+                name: 'Saminho (O desgraçado)',
+                image: './images/Bronx.png',
+                description: 'Cartel responsável pela maior produção \n de equipamentos para roubos do Bronx'
             }
         },
         'Brooklyn': { 
             color: '#474747', 
             name: 'Brooklyn',
             leader: {
-                name: 'Juca',
+                name: 'Desconhecido',
                 image: './images/Brooklyn.png',
-                description: 'Breve descrição sobre o líder de Brooklyn'
+                description: 'O líder do Brooklyn'
             }
         }
     };
 
-    fetch('Map.svg')  // Caminho relativo ao index.html
+    fetch('Map.svg')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -84,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const svg = svgContainer.querySelector('svg');
             svg.style.background = '#101010';
             
-            const emblemas = ['Ouro', 'Esmeralda', 'Diamante', 'Hell', 'Prata', 'Bronze', 'Ametista'];
+            const emblemas = ['Ouro', 'Esmeralda', 'Diamante', 'Hell', 'Prata', 'Bronze'];
             const mapGroup = svg.querySelector('#Map\\+lvl');
             
             emblemas.forEach(id => {
@@ -124,7 +115,6 @@ document.addEventListener('DOMContentLoaded', function() {
                                     'Manhattan': 'Diamante',
                                     'Brooklyn': 'Prata',
                                     'Queens': 'Bronze',
-                                    'Bayone': 'Ametista',
                                     'New Jersey': 'Ouro'
                                 };
                                 
@@ -138,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     
                                     document.getElementById('leader-image').src = leaderInfo.image;
                                     document.getElementById('leader-name').textContent = leaderInfo.name;
-                                    document.getElementById('leader-description').textContent = leaderInfo.description;
+                                    document.getElementById('leader-description').innerHTML = leaderInfo.description.replace(/\n/g, '<br>');
                                     
                                     leaderInfoEl.style.display = 'flex';
                                     requestAnimationFrame(() => {
